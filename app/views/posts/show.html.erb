@@ -1,13 +1,16 @@
 <div id="title">
   <div>
-    <p>
-      <%= @post.created_at.to_s[0, 10] %>
-      Author:
-      <%= @post.author %>
-    </p>
+
     <h1>
       <%= @post.title %>
     </h1>
+    <p>
+      <br/>
+      <%= "Date: #{@post.created_at.to_s[0, 10]}" %>
+    </p>
+    <p>
+      writed by <%= @post.author %>
+    </p>
   </div>
 </div>
 

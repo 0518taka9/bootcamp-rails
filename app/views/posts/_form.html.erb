@@ -1,22 +1,22 @@
 <div id="article_wrap">
 <%= form_for @post do |f| %>
-    <%= f.hidden_field :author, value: current_user.email %>
+    <%= f.hidden_field :author, value: current_user.username %>
     <p>
-    タイトル </br>
-    <%= f.text_field :title, placeholder: 'enter title' %>
+    タイトル <br/>
+    <%= f.text_field :title, :size => "60x10", placeholder: 'enter title' %>
     <% if @post.errors.messages[:title].any? %>
       <span class="error"><%= @post.errors.messages[:title][0] %></span>
     <% end %>
   </p>
   <p>
-    </br>記事内容 </br>
-    <%= f.text_area :body, placeholder: 'enter body text' %>
+    <br/>記事内容 <br/>
+    <%= f.text_area :body, :size => "60x10", placeholder: 'enter body text' %>
     <% if @post.errors.messages[:body].any? %>
       <span class="error"><%= @post.errors.messages[:body][0] %></span>
     <% end %>
   </p>
   <p>
-    </br>
+    <br/>
     <%= f.submit %>
   </p>
 <% end %>
