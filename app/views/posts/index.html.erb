@@ -15,7 +15,7 @@
         <p>
           <%= post.created_at.to_s[0, 10] %>
         </p>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && (current_user.email == "snufkingdom96@gmail.com" || current_user.email == post.author) %>
           <p>
             <%= link_to '編集', edit_post_path(post), class: 'command' %>
             <%= link_to '削除',
