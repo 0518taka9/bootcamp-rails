@@ -1,0 +1,36 @@
+<div id="title">
+  <div>
+    <p>
+      <%= @post.created_at.to_s[0, 10] %>
+      Author:
+      <%= @post.author %>
+    </p>
+    <h1>
+      <%= @post.title %>
+    </h1>
+  </div>
+</div>
+
+<div id="article_wrap">
+  <div id="content">
+    <p>
+      <%= simple_format @post.body %>
+    </p>
+  </div>
+
+  <div id="sidebar">
+
+    <h2>★PV数ランキング</h2>
+    <ul>
+      <% Post.most_popular.each do |post| %>
+        <li>
+          <%= link_to "#{post.title}", post_path(post.id) %>
+          <span>
+            <%= " (#{post.redis_page_view}PV) " %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>

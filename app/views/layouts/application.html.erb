@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsTestApp</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>RailsTestApp</title>
+  <%= render 'layouts/head' %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<body>
 
-  <body>
-    <%= yield %>
-  </body>
+<header>
+  <%= render 'layouts/header' %>
+</header>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<footer>
+  <%= render 'layouts/footer' %>
+</footer>
+
+</body>
 </html>
